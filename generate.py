@@ -4,12 +4,12 @@ from pathlib import Path
 
 
 # =========================
-# 文件设置
+# 文件位置
 # =========================
 
 BASE_DIR = Path(__file__).resolve().parent
 
-EXCEL_FILE = BASE_DIR / "answer.xlsx"
+EXCEL_FILE = BASE_DIR / "keypoint.xlsx"
 OUTPUT_FILE = BASE_DIR / "index.html"
 
 
@@ -18,22 +18,27 @@ OUTPUT_FILE = BASE_DIR / "index.html"
 # =========================
 
 wb = load_workbook(EXCEL_FILE, data_only=True)
-ws = wb["知識点"]
+ws = wb.active
 
 
 items = []
 
 for row in ws.iter_rows(min_row=2, values_only=True):
 
-    # Excel 五列：
-    # ID / 答案 / 前半段 / 后半段 / 分类
-    item_id, answer, front, back, category = row
+    # Excel:
+    # A = ID
+    # B = 答案
+    # C = 前半段
+    # D = 後半段
+    # E = 分類
 
-    # 空行跳过
+    item_id, answer, front, back, category = row[:5]
+
+    # ID 为空的行跳过
     if item_id is None:
         continue
 
-    item_id = str(item_id)
+    item_id = str(item_id).strip()
     answer = "" if answer is None else str(answer)
     front = "" if front is None else str(front)
     back = "" if back is None else str(back)
@@ -49,7 +54,7 @@ for row in ws.iter_rows(min_row=2, values_only=True):
 
 
 # =========================
-# 按分类整理
+# 按分类分组
 # =========================
 
 categories = {}
@@ -72,9 +77,10 @@ content = []
 
 for category, category_items in categories.items():
 
-    content.append(
-        f'<h2>{escape(category)}</h2>'
-    )
+    if category:
+        content.append(
+            f'<h2>{escape(category)}</h2>'
+        )
 
     content.append(
         '<ul class="knowledge-list">'
@@ -95,15 +101,21 @@ for category, category_items in categories.items():
         type="checkbox"
     >
 
-    <span>{front}</span>
+    <span class="front">
+        {front}
+    </span>
 
     <span
         class="answer"
         tabindex="0"
         role="button"
-    >{answer}</span>
+    >
+        {answer}
+    </span>
 
-    <span>{back}</span>
+    <span class="back">
+        {back}
+    </span>
 
 </li>
 ''')
@@ -115,23 +127,22 @@ knowledge_html = "\n".join(content)
 
 
 # =========================
-# HTML 模板
+# 生成完整 index.html
 # =========================
 
 html = f'''<!DOCTYPE html>
-
 <html lang="ja">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>宅建知識</title>
-
-<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -147,6 +158,10 @@ html = f'''<!DOCTYPE html>
 </main>
 
 
+<!-- 加载你原来的 JavaScript -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+
 <script src="app.js"></script>
 
 </body>
@@ -156,7 +171,7 @@ html = f'''<!DOCTYPE html>
 
 
 # =========================
-# 输出 HTML
+# 写入 index.html
 # =========================
 
 OUTPUT_FILE.write_text(
@@ -164,6 +179,15 @@ OUTPUT_FILE.write_text(
     encoding="utf-8"
 )
 
+
+# =========================
+# 完成提示
+# =========================
+
+print("================================")
 print("HTML生成完成！")
-print(f"输出文件：{OUTPUT_FILE}")
+print("================================")
+print(f"Excel：{EXCEL_FILE.name}")
+print(f"HTML ：{OUTPUT_FILE.name}")
 print(f"知识点数量：{len(items)}")
+print("================================")
