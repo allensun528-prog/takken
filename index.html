@@ -12,6 +12,68 @@
 
 <title>宅建知識</title>
 
+
+<style>
+
+/* =========================
+   答案隐藏 / 显示
+   ========================= */
+
+.answer {
+    color: transparent;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 0 8px;
+}
+
+.answer.show {
+    color: inherit;
+    background: transparent;
+}
+
+
+/* =========================
+   基本样式
+   ========================= */
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+.knowledge-list {
+    padding-left: 0;
+}
+
+.item {
+    list-style: none;
+    margin: 8px 0;
+}
+
+.item-check {
+    margin-right: 8px;
+}
+
+.front {
+    margin-right: 4px;
+}
+
+.back {
+    margin-left: 4px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+</style>
+
 </head>
 
 
@@ -131,15 +193,44 @@
 </li>
 
 </ul>
+<ul class="knowledge-list">
+
+<li class="item" data-id="5">
+
+    <input
+        class="item-check"
+        type="checkbox"
+    >
+
+    <span class="front">
+        测试
+    </span>
+
+    <span
+        class="answer"
+        tabindex="0"
+        role="button"
+    >
+        答案
+    </span>
+
+    <span class="back">
+        
+    </span>
+
+</li>
+
+</ul>
 
 </main>
 
 
-<!-- 加载你原来的 JavaScript -->
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+<!-- Firebase / app.js -->
 
-<script type="module" src="app.js"></script>
+<script
+    type="module"
+    src="app.js"
+></script>
 
 </body>
 
