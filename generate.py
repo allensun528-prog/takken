@@ -162,7 +162,7 @@ html = f'''<!DOCTYPE html>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
 
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 </body>
 
