@@ -9,7 +9,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-EXCEL_FILE = BASE_DIR / "keypoint.xlsx"
+EXCEL_FILE = BASE_DIR / "answer.xlsx"
 OUTPUT_FILE = BASE_DIR / "index.html"
 
 
@@ -20,21 +20,13 @@ OUTPUT_FILE = BASE_DIR / "index.html"
 wb = load_workbook(EXCEL_FILE, data_only=True)
 ws = wb.active
 
-
 items = []
 
 for row in ws.iter_rows(min_row=2, values_only=True):
 
-    # Excel:
-    # A = ID
-    # B = 答案
-    # C = 前半段
-    # D = 後半段
-    # E = 分類
-
     item_id, answer, front, back, category = row[:5]
 
-    # ID 为空的行跳过
+    # ID 为空则跳过
     if item_id is None:
         continue
 
@@ -54,7 +46,7 @@ for row in ws.iter_rows(min_row=2, values_only=True):
 
 
 # =========================
-# 按分类分组
+# 按分类整理
 # =========================
 
 categories = {}
@@ -127,7 +119,7 @@ knowledge_html = "\n".join(content)
 
 
 # =========================
-# 生成完整 index.html
+# 生成完整 HTML
 # =========================
 
 html = f'''<!DOCTYPE html>
@@ -144,6 +136,68 @@ html = f'''<!DOCTYPE html>
 
 <title>宅建知識</title>
 
+
+<style>
+
+/* =========================
+   答案隐藏 / 显示
+   ========================= */
+
+.answer {{
+    color: transparent;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 0 8px;
+}}
+
+.answer.show {{
+    color: inherit;
+    background: transparent;
+}}
+
+
+/* =========================
+   基本样式
+   ========================= */
+
+body {{
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+}}
+
+.knowledge-list {{
+    padding-left: 0;
+}}
+
+.item {{
+    list-style: none;
+    margin: 8px 0;
+}}
+
+.item-check {{
+    margin-right: 8px;
+}}
+
+.front {{
+    margin-right: 4px;
+}}
+
+.back {{
+    margin-left: 4px;
+}}
+
+h2 {{
+    margin-top: 30px;
+}}
+
+</style>
+
 </head>
 
 
@@ -158,11 +212,12 @@ html = f'''<!DOCTYPE html>
 </main>
 
 
-<!-- 加载你原来的 JavaScript -->
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+<!-- Firebase / app.js -->
 
-<script type="module" src="app.js"></script>
+<script
+    type="module"
+    src="app.js"
+></script>
 
 </body>
 
