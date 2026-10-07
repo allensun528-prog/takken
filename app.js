@@ -1,4 +1,3 @@
-```javascript
 // Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDygLh_xY1KhwLmjVV_HHBxlP2diRIXik8",
@@ -89,4 +88,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-```
