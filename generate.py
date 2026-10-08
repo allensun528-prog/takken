@@ -196,6 +196,25 @@ h2 {{
     margin-top: 30px;
 }}
 
+
+/* =========================
+   未チェックのみ开关
+   ========================= */
+
+.filter-box {{
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 12px 0;
+    z-index: 100;
+    border-bottom: 1px solid #ddd;
+}}
+
+.filter-box label {{
+    cursor: pointer;
+    font-size: 16px;
+}}
+
 </style>
 
 </head>
@@ -207,17 +226,67 @@ h2 {{
 
 <h1>宅建知識</h1>
 
+
+<!-- 未チェックのみ -->
+
+<div class="filter-box">
+
+    <label>
+        <input
+            type="checkbox"
+            id="uncompleted-only"
+        >
+        未チェックのみ
+    </label>
+
+</div>
+
+
 {knowledge_html}
 
 </main>
 
 
-<!-- Firebase / app.js -->
+<!-- 答案显示、Firebase、勾选状态 -->
 
 <script
     type="module"
     src="app.js"
 ></script>
+
+
+<script>
+
+/* =========================
+   未チェックのみ筛选
+   ========================= */
+
+document.addEventListener("DOMContentLoaded", function () {{
+
+    const filter = document.getElementById("uncompleted-only");
+
+    const items = document.querySelectorAll(".item");
+
+    filter.addEventListener("change", function () {{
+
+        items.forEach(function (item) {{
+
+            const checkbox = item.querySelector(".item-check");
+
+            if (filter.checked && checkbox.checked) {{
+                item.style.display = "none";
+            }} else {{
+                item.style.display = "";
+            }}
+
+        }});
+
+    }});
+
+}});
+
+</script>
+
 
 </body>
 
