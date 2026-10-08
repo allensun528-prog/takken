@@ -9,7 +9,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-EXCEL_FILE = BASE_DIR / "answer.xlsx"
+EXCEL_FILE = BASE_DIR / "keypoint.xlsx"
 OUTPUT_FILE = BASE_DIR / "index.html"
 
 
