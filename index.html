@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>宅建知識</title>
 
-
 <style>
-
-/* =========================
-   答案隐藏 / 显示
-   ========================= */
-
 .answer {
     color: transparent;
     background: #ddd;
@@ -32,18 +19,8 @@
     background: transparent;
 }
 
-
-/* =========================
-   基本样式
-   ========================= */
-
 body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.6;
 }
 
@@ -72,6031 +49,5089 @@ h2 {
     margin-top: 30px;
 }
 
-
-/* =========================
-   未チェックのみ开关
-   ========================= */
-
 .filter-box {
     position: sticky;
     top: 0;
     background: white;
-    padding: 12px 0;
+    padding: 12px;
     z-index: 100;
     border-bottom: 1px solid #ddd;
 }
 
-.filter-box label {
-    cursor: pointer;
-    font-size: 16px;
+.filter-title {
+    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-</style>
+.category-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
 
+.category-option,
+.unchecked-option {
+    cursor: pointer;
+}
+
+.filter-actions {
+    margin-bottom: 8px;
+}
+
+.filter-actions button {
+    margin-right: 8px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.category-heading {
+    margin-top: 30px;
+}
+
+.category-heading.filtered-empty {
+    display: none;
+}
+</style>
 </head>
 
-
 <body>
-
 <main>
-
 <h1>宅建知識</h1>
-
-
-<!-- 未チェックのみ -->
 
 <div class="filter-box">
 
-    <label>
-        <input
-            type="checkbox"
-            id="uncompleted-only"
-        >
-        未チェックのみ
+    <div class="filter-title">分類（複数選択可）</div>
+
+    <div class="filter-actions">
+        <button type="button" id="select-all-categories">全選択</button>
+        <button type="button" id="clear-categories">分類選択解除</button>
+    </div>
+
+    <div class="category-options">
+        
+        <label class="category-option">
+            <input
+                type="checkbox"
+                class="category-check"
+                value="宅建业法"
+            >
+            宅建业法
+        </label>
+    
+
+        <label class="category-option">
+            <input
+                type="checkbox"
+                class="category-check"
+                value="权利关系"
+            >
+            权利关系
+        </label>
+    
+
+        <label class="category-option">
+            <input
+                type="checkbox"
+                class="category-check"
+                value="法令"
+            >
+            法令
+        </label>
+    
+
+        <label class="category-option">
+            <input
+                type="checkbox"
+                class="category-check"
+                value="税"
+            >
+            税
+        </label>
+    
+    </div>
+
+    <hr>
+
+    <label class="unchecked-option">
+        <input type="checkbox" id="uncompleted-only">
+        未チェックのみ表示
     </label>
 
 </div>
 
-
-<h2>宅建业法</h2>
+<h2 class="category-heading" data-category="宅建业法">宅建业法</h2>
 <ul class="knowledge-list">
 
-<li class="item" data-id="1">
+<li class="item"
+    data-id="1"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许申请书记载事项 1：
-    </span>
+    <span class="front">免许申请书记载事项 1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        商号或者名称
-    </span>
+    <span class="answer" tabindex="0" role="button">商号或者名称</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="2">
+<li class="item"
+    data-id="2"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许申请书记载事项 2：
-    </span>
+    <span class="front">免许申请书记载事项 2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        法人：役员（非常勤也要）、政令使用人的氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">法人：役员（非常勤也要）、政令使用人的氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="3">
+<li class="item"
+    data-id="3"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许申请书记载事项 3：
-    </span>
+    <span class="front">免许申请书记载事项 3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        个人：政令使用人的氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">个人：政令使用人的氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="4">
+<li class="item"
+    data-id="4"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许申请书记载事项 4：
-    </span>
+    <span class="front">免许申请书记载事项 4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        事务所名称、所在地
-    </span>
+    <span class="answer" tabindex="0" role="button">事务所名称、所在地</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="5">
+<li class="item"
+    data-id="5"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许申请书记载事项 5：
-    </span>
+    <span class="front">免许申请书记载事项 5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        各事务所的专任宅建士的氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">各事务所的专任宅建士的氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="6">
+<li class="item"
+    data-id="6"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许申请书记载事项 6：
-    </span>
+    <span class="front">免许申请书记载事项 6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅建业以外的事业种类
-    </span>
+    <span class="answer" tabindex="0" role="button">宅建业以外的事业种类</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="7">
+<li class="item"
+    data-id="7"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        申请书有更改的话需要届出的内容：
-    </span>
+    <span class="front">申请书有更改的话需要届出的内容：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1~5，6宅建业以外的事业不用
-    </span>
+    <span class="answer" tabindex="0" role="button">1~5，6宅建业以外的事业不用</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="8">
+<li class="item"
+    data-id="8"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        交付的免许证记载内容1：
-    </span>
+    <span class="front">交付的免许证记载内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        商号或名称
-    </span>
+    <span class="answer" tabindex="0" role="button">商号或名称</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="9">
+<li class="item"
+    data-id="9"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        交付的免许证记载内容2：
-    </span>
+    <span class="front">交付的免许证记载内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代表者的氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">代表者的氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="10">
+<li class="item"
+    data-id="10"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        交付的免许证记载内容3：
-    </span>
+    <span class="front">交付的免许证记载内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        主事务所所在地
-    </span>
+    <span class="answer" tabindex="0" role="button">主事务所所在地</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="11">
+<li class="item"
+    data-id="11"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        交付的免许证记载内容4：
-    </span>
+    <span class="front">交付的免许证记载内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许证番号
-    </span>
+    <span class="answer" tabindex="0" role="button">免许证番号</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="12">
+<li class="item"
+    data-id="12"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        交付的免许证记载内容5：
-    </span>
+    <span class="front">交付的免许证记载内容5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许有效期
-    </span>
+    <span class="answer" tabindex="0" role="button">免许有效期</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="13">
+<li class="item"
+    data-id="13"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许证需要返纳的情况1：
-    </span>
+    <span class="front">免许证需要返纳的情况1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        更换免许
-    </span>
+    <span class="answer" tabindex="0" role="button">更换免许</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="14">
+<li class="item"
+    data-id="14"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许证需要返纳的情况2：
-    </span>
+    <span class="front">免许证需要返纳的情况2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许取消处分
-    </span>
+    <span class="answer" tabindex="0" role="button">免许取消处分</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="15">
+<li class="item"
+    data-id="15"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许证需要返纳的情况3：
-    </span>
+    <span class="front">免许证需要返纳的情况3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        找到丢失的免许证
-    </span>
+    <span class="answer" tabindex="0" role="button">找到丢失的免许证</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="16">
+<li class="item"
+    data-id="16"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        免许证需要返纳的情况4：
-    </span>
+    <span class="front">免许证需要返纳的情况4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        废业届出
-    </span>
+    <span class="answer" tabindex="0" role="button">废业届出</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="17">
+<li class="item"
+    data-id="17"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容1：
-    </span>
+    <span class="front">宅建业者名簿记载内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许证番号和年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">免许证番号和年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="18">
+<li class="item"
+    data-id="18"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容2：
-    </span>
+    <span class="front">宅建业者名簿记载内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        商号或名称
-    </span>
+    <span class="answer" tabindex="0" role="button">商号或名称</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="19">
+<li class="item"
+    data-id="19"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容3：
-    </span>
+    <span class="front">宅建业者名簿记载内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        法人役员或政令使用人
-    </span>
+    <span class="answer" tabindex="0" role="button">法人役员或政令使用人</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="20">
+<li class="item"
+    data-id="20"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容4：
-    </span>
+    <span class="front">宅建业者名簿记载内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        个人政令使用人
-    </span>
+    <span class="answer" tabindex="0" role="button">个人政令使用人</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="21">
+<li class="item"
+    data-id="21"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容5：
-    </span>
+    <span class="front">宅建业者名簿记载内容5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        事务所名称和所在地
-    </span>
+    <span class="answer" tabindex="0" role="button">事务所名称和所在地</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="22">
+<li class="item"
+    data-id="22"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容6：
-    </span>
+    <span class="front">宅建业者名簿记载内容6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅建业以外事业种类
-    </span>
+    <span class="answer" tabindex="0" role="button">宅建业以外事业种类</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="23">
+<li class="item"
+    data-id="23"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿记载内容7：
-    </span>
+    <span class="front">宅建业者名簿记载内容7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        指示处分或业务停止处分的年月日和内容
-    </span>
+    <span class="answer" tabindex="0" role="button">指示处分或业务停止处分的年月日和内容</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="24">
+<li class="item"
+    data-id="24"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者名簿不需要记录的内容：
-    </span>
+    <span class="front">宅建业者名簿不需要记录的内容：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        专任宅建士名字
-    </span>
+    <span class="answer" tabindex="0" role="button">专任宅建士名字</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="25">
+<li class="item"
+    data-id="25"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        暴力犯罪种类1：
-    </span>
+    <span class="front">暴力犯罪种类1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        伤害
-    </span>
+    <span class="answer" tabindex="0" role="button">伤害</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="26">
+<li class="item"
+    data-id="26"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        暴力犯罪种类2：
-    </span>
+    <span class="front">暴力犯罪种类2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        伤害现场助势
-    </span>
+    <span class="answer" tabindex="0" role="button">伤害现场助势</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="27">
+<li class="item"
+    data-id="27"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        暴力犯罪种类3：
-    </span>
+    <span class="front">暴力犯罪种类3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        暴行
-    </span>
+    <span class="answer" tabindex="0" role="button">暴行</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="28">
+<li class="item"
+    data-id="28"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        暴力犯罪种类4：
-    </span>
+    <span class="front">暴力犯罪种类4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        凶器准备集合
-    </span>
+    <span class="answer" tabindex="0" role="button">凶器准备集合</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="29">
+<li class="item"
+    data-id="29"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        暴力犯罪种类5：
-    </span>
+    <span class="front">暴力犯罪种类5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        胁迫
-    </span>
+    <span class="answer" tabindex="0" role="button">胁迫</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="30">
+<li class="item"
+    data-id="30"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        暴力犯罪种类6：
-    </span>
+    <span class="front">暴力犯罪种类6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        暴力团
-    </span>
+    <span class="answer" tabindex="0" role="button">暴力团</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="31">
+<li class="item"
+    data-id="31"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        以下理由受到免许取消，免许取消日开始5年内不行的1：
-    </span>
+    <span class="front">以下理由受到免许取消，免许取消日开始5年内不行的1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        不正手段获得免许
-    </span>
+    <span class="answer" tabindex="0" role="button">不正手段获得免许</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="32">
+<li class="item"
+    data-id="32"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        以下理由受到免许取消，免许取消日开始5年内不行的2：
-    </span>
+    <span class="front">以下理由受到免许取消，免许取消日开始5年内不行的2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        业务停止的行为情状严重
-    </span>
+    <span class="answer" tabindex="0" role="button">业务停止的行为情状严重</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="33">
+<li class="item"
+    data-id="33"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        以下理由受到免许取消，免许取消日开始5年内不行的3：
-    </span>
+    <span class="front">以下理由受到免许取消，免许取消日开始5年内不行的3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        违反业务停止
-    </span>
+    <span class="answer" tabindex="0" role="button">违反业务停止</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="34">
+<li class="item"
+    data-id="34"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        以下理由受到免许取消，免许取消日开始5年内不行的4：
-    </span>
+    <span class="front">以下理由受到免许取消，免许取消日开始5年内不行的4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许取消听闻公示日前或者紧急废业届出日前60天以内的法人役员
-    </span>
+    <span class="answer" tabindex="0" role="button">免许取消听闻公示日前或者紧急废业届出日前60天以内的法人役员</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="35">
+<li class="item"
+    data-id="35"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士不正受验，禁止
-    </span>
+    <span class="front">宅建士不正受验，禁止</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        3
-    </span>
+    <span class="answer" tabindex="0" role="button">3</span>
 
-    <span class="back">
-        年内考试
-    </span>
+    <span class="back">年内考试</span>
 
 </li>
 
 
-<li class="item" data-id="36">
+<li class="item"
+    data-id="36"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士欠格事由，登陆消除处分5年内不行的1：
-    </span>
+    <span class="front">宅建士欠格事由，登陆消除处分5年内不行的1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        不正手段登录
-    </span>
+    <span class="answer" tabindex="0" role="button">不正手段登录</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="37">
+<li class="item"
+    data-id="37"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士欠格事由，登陆消除处分5年内不行的2：
-    </span>
+    <span class="front">宅建士欠格事由，登陆消除处分5年内不行的2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        不正手段交付宅建士证
-    </span>
+    <span class="answer" tabindex="0" role="button">不正手段交付宅建士证</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="38">
+<li class="item"
+    data-id="38"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士欠格事由，登陆消除处分5年内不行的3：
-    </span>
+    <span class="front">宅建士欠格事由，登陆消除处分5年内不行的3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        事务禁止处分行为，情状特别严重
-    </span>
+    <span class="answer" tabindex="0" role="button">事务禁止处分行为，情状特别严重</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="39">
+<li class="item"
+    data-id="39"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士欠格事由，登陆消除处分5年内不行的4：
-    </span>
+    <span class="front">宅建士欠格事由，登陆消除处分5年内不行的4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        违反事务禁止处分
-    </span>
+    <span class="answer" tabindex="0" role="button">违反事务禁止处分</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="40">
+<li class="item"
+    data-id="40"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士欠格事由，登陆消除处分5年内不行的5：宅建士登录后没拿到证
-    </span>
+    <span class="front">宅建士欠格事由，登陆消除处分5年内不行的5：宅建士登录后没拿到证</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        不正手段登录
-    </span>
+    <span class="answer" tabindex="0" role="button">不正手段登录</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="41">
+<li class="item"
+    data-id="41"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士欠格事由，登陆消除处分5年内不行的6：宅建士登录后没拿到证
-    </span>
+    <span class="front">宅建士欠格事由，登陆消除处分5年内不行的6：宅建士登录后没拿到证</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        进行了宅建士行为，情状特别严重
-    </span>
+    <span class="answer" tabindex="0" role="button">进行了宅建士行为，情状特别严重</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="42">
+<li class="item"
+    data-id="42"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        事务禁止最长
-    </span>
+    <span class="front">事务禁止最长</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1
-    </span>
+    <span class="answer" tabindex="0" role="button">1</span>
 
-    <span class="back">
-        年
-    </span>
+    <span class="back">年</span>
 
 </li>
 
 
-<li class="item" data-id="43">
+<li class="item"
+    data-id="43"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容1：
-    </span>
+    <span class="front">宅建士资格登录簿内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        登录番号和年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">登录番号和年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="44">
+<li class="item"
+    data-id="44"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容2：
-    </span>
+    <span class="front">宅建士资格登录簿内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="45">
+<li class="item"
+    data-id="45"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容3：
-    </span>
+    <span class="front">宅建士资格登录簿内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        生日和性别
-    </span>
+    <span class="answer" tabindex="0" role="button">生日和性别</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="46">
+<li class="item"
+    data-id="46"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容4：
-    </span>
+    <span class="front">宅建士资格登录簿内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        住所、本籍
-    </span>
+    <span class="answer" tabindex="0" role="button">住所、本籍</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="47">
+<li class="item"
+    data-id="47"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容5：
-    </span>
+    <span class="front">宅建士资格登录簿内容5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅建业者的商号或名称、免许证番号
-    </span>
+    <span class="answer" tabindex="0" role="button">宅建业者的商号或名称、免许证番号</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="48">
+<li class="item"
+    data-id="48"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容6：
-    </span>
+    <span class="front">宅建士资格登录簿内容6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        考试合格年月日和番号
-    </span>
+    <span class="answer" tabindex="0" role="button">考试合格年月日和番号</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="49">
+<li class="item"
+    data-id="49"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士资格登录簿内容7：
-    </span>
+    <span class="front">宅建士资格登录簿内容7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        指示处分、事务禁止处分的年月日和内容
-    </span>
+    <span class="answer" tabindex="0" role="button">指示处分、事务禁止处分的年月日和内容</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="50">
+<li class="item"
+    data-id="50"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士有变更要立刻申请的1：
-    </span>
+    <span class="front">宅建士有变更要立刻申请的1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2.氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">2.氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="51">
+<li class="item"
+    data-id="51"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士有变更要立刻申请的2：
-    </span>
+    <span class="front">宅建士有变更要立刻申请的2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        4.住所、本籍
-    </span>
+    <span class="answer" tabindex="0" role="button">4.住所、本籍</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="52">
+<li class="item"
+    data-id="52"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士有变更要立刻申请的3：
-    </span>
+    <span class="front">宅建士有变更要立刻申请的3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        5.宅建业者商号或名称、免许证番号
-    </span>
+    <span class="answer" tabindex="0" role="button">5.宅建业者商号或名称、免许证番号</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="53">
+<li class="item"
+    data-id="53"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        事务禁止期间不能做什么
-    </span>
+    <span class="front">事务禁止期间不能做什么</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        转移登录
-    </span>
+    <span class="answer" tabindex="0" role="button">转移登录</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="54">
+<li class="item"
+    data-id="54"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        事务禁止期间能做什么
-    </span>
+    <span class="front">事务禁止期间能做什么</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        变更登录
-    </span>
+    <span class="answer" tabindex="0" role="button">变更登录</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="55">
+<li class="item"
+    data-id="55"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证记载内容1：
-    </span>
+    <span class="front">宅建士证记载内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        氏名、生年月日、住所
-    </span>
+    <span class="answer" tabindex="0" role="button">氏名、生年月日、住所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="56">
+<li class="item"
+    data-id="56"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证记载内容2：
-    </span>
+    <span class="front">宅建士证记载内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        登录番号、登陆年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">登录番号、登陆年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="57">
+<li class="item"
+    data-id="57"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证记载内容3：
-    </span>
+    <span class="front">宅建士证记载内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        有效期截止日
-    </span>
+    <span class="answer" tabindex="0" role="button">有效期截止日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="58">
+<li class="item"
+    data-id="58"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证记载内容4：
-    </span>
+    <span class="front">宅建士证记载内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        交付年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">交付年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="59">
+<li class="item"
+    data-id="59"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证要返纳1：
-    </span>
+    <span class="front">宅建士证要返纳1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        失效
-    </span>
+    <span class="answer" tabindex="0" role="button">失效</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="60">
+<li class="item"
+    data-id="60"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证要返纳2：
-    </span>
+    <span class="front">宅建士证要返纳2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        登录消除
-    </span>
+    <span class="answer" tabindex="0" role="button">登录消除</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="61">
+<li class="item"
+    data-id="61"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士证要返纳3：
-    </span>
+    <span class="front">宅建士证要返纳3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        找的旧的
-    </span>
+    <span class="answer" tabindex="0" role="button">找的旧的</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="62">
+<li class="item"
+    data-id="62"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        营业保证金本店
-    </span>
+    <span class="front">营业保证金本店</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1000
-    </span>
+    <span class="answer" tabindex="0" role="button">1000</span>
 
-    <span class="back">
-        万日元
-    </span>
+    <span class="back">万日元</span>
 
 </li>
 
 
-<li class="item" data-id="63">
+<li class="item"
+    data-id="63"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        营业保证金支店
-    </span>
+    <span class="front">营业保证金支店</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        500
-    </span>
+    <span class="answer" tabindex="0" role="button">500</span>
 
-    <span class="back">
-        万日元
-    </span>
+    <span class="back">万日元</span>
 
 </li>
 
 
-<li class="item" data-id="64">
+<li class="item"
+    data-id="64"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        国债
-    </span>
+    <span class="front">国债</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        100
-    </span>
+    <span class="answer" tabindex="0" role="button">100</span>
 
-    <span class="back">
-        %
-    </span>
+    <span class="back">%</span>
 
 </li>
 
 
-<li class="item" data-id="65">
+<li class="item"
+    data-id="65"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        地方债政府保证债
-    </span>
+    <span class="front">地方债政府保证债</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        90
-    </span>
+    <span class="answer" tabindex="0" role="button">90</span>
 
-    <span class="back">
-        %
-    </span>
+    <span class="back">%</span>
 
 </li>
 
 
-<li class="item" data-id="66">
+<li class="item"
+    data-id="66"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        其他国土交通省令有价债券
-    </span>
+    <span class="front">其他国土交通省令有价债券</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        80
-    </span>
+    <span class="answer" tabindex="0" role="button">80</span>
 
-    <span class="back">
-        %
-    </span>
+    <span class="back">%</span>
 
 </li>
 
 
-<li class="item" data-id="67">
+<li class="item"
+    data-id="67"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        开新的支店需要：
-    </span>
+    <span class="front">开新的支店需要：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        离本店最近的供讬所供讬然后届出
-    </span>
+    <span class="answer" tabindex="0" role="button">离本店最近的供讬所供讬然后届出</span>
 
-    <span class="back">
-        才能开
-    </span>
+    <span class="back">才能开</span>
 
 </li>
 
 
-<li class="item" data-id="68">
+<li class="item"
+    data-id="68"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        还付导致营业保证金不足要在：
-    </span>
+    <span class="front">还付导致营业保证金不足要在：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        收到免许权者通知的那天开始2周内
-    </span>
+    <span class="answer" tabindex="0" role="button">收到免许权者通知的那天开始2周内</span>
 
-    <span class="back">
-        （什么时间）补上
-    </span>
+    <span class="back">（什么时间）补上</span>
 
 </li>
 
 
-<li class="item" data-id="69">
+<li class="item"
+    data-id="69"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        营业保证金补上之后要在：
-    </span>
+    <span class="front">营业保证金补上之后要在：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        交钱那天开始2周内
-    </span>
+    <span class="answer" tabindex="0" role="button">交钱那天开始2周内</span>
 
-    <span class="back">
-        （什么时间）届出
-    </span>
+    <span class="back">（什么时间）届出</span>
 
 </li>
 
 
-<li class="item" data-id="70">
+<li class="item"
+    data-id="70"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        取回公告的情况1：
-    </span>
+    <span class="front">取回公告的情况1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        破产
-    </span>
+    <span class="answer" tabindex="0" role="button">破产</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="71">
+<li class="item"
+    data-id="71"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        取回公告的情况2：
-    </span>
+    <span class="front">取回公告的情况2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        废业
-    </span>
+    <span class="answer" tabindex="0" role="button">废业</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="72">
+<li class="item"
+    data-id="72"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        取回公告的情况3：
-    </span>
+    <span class="front">取回公告的情况3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        关闭事务所
-    </span>
+    <span class="answer" tabindex="0" role="button">关闭事务所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="73">
+<li class="item"
+    data-id="73"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        公告时要向
-    </span>
+    <span class="front">公告时要向</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许权者
-    </span>
+    <span class="answer" tabindex="0" role="button">免许权者</span>
 
-    <span class="back">
-        届出
-    </span>
+    <span class="back">届出</span>
 
 </li>
 
 
-<li class="item" data-id="74">
+<li class="item"
+    data-id="74"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        不用公告的情况1：
-    </span>
+    <span class="front">不用公告的情况1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        成为保证协会社员
-    </span>
+    <span class="answer" tabindex="0" role="button">成为保证协会社员</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="75">
+<li class="item"
+    data-id="75"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        不用公告的情况2：
-    </span>
+    <span class="front">不用公告的情况2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        本店转移
-    </span>
+    <span class="answer" tabindex="0" role="button">本店转移</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="76">
+<li class="item"
+    data-id="76"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会本店
-    </span>
+    <span class="front">保证协会本店</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        90
-    </span>
+    <span class="answer" tabindex="0" role="button">90</span>
 
-    <span class="back">
-        万日元
-    </span>
+    <span class="back">万日元</span>
 
 </li>
 
 
-<li class="item" data-id="77">
+<li class="item"
+    data-id="77"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会支店
-    </span>
+    <span class="front">保证协会支店</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        60
-    </span>
+    <span class="answer" tabindex="0" role="button">60</span>
 
-    <span class="back">
-        万日元
-    </span>
+    <span class="back">万日元</span>
 
 </li>
 
 
-<li class="item" data-id="78">
+<li class="item"
+    data-id="78"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        加入保证协会需要：
-    </span>
+    <span class="front">加入保证协会需要：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        加入之前先交钱
-    </span>
+    <span class="answer" tabindex="0" role="button">加入之前先交钱</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="79">
+<li class="item"
+    data-id="79"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        开新店需要：
-    </span>
+    <span class="front">开新店需要：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2周内交钱
-    </span>
+    <span class="answer" tabindex="0" role="button">2周内交钱</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="80">
+<li class="item"
+    data-id="80"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会拿到钱后要在
-    </span>
+    <span class="front">保证协会拿到钱后要在</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1周
-    </span>
+    <span class="answer" tabindex="0" role="button">1周</span>
 
-    <span class="back">
-        （时间内）供讬
-    </span>
+    <span class="back">（时间内）供讬</span>
 
 </li>
 
 
-<li class="item" data-id="81">
+<li class="item"
+    data-id="81"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会拿到钱后要供讬到
-    </span>
+    <span class="front">保证协会拿到钱后要供讬到</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        法务大臣及国土交通大臣指定的供讬所
-    </span>
+    <span class="answer" tabindex="0" role="button">法务大臣及国土交通大臣指定的供讬所</span>
 
-    <span class="back">
-        （地点）
-    </span>
+    <span class="back">（地点）</span>
 
 </li>
 
 
-<li class="item" data-id="82">
+<li class="item"
+    data-id="82"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会供讬后要向
-    </span>
+    <span class="front">保证协会供讬后要向</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        社员的免许权者
-    </span>
+    <span class="answer" tabindex="0" role="button">社员的免许权者</span>
 
-    <span class="back">
-        （谁）届出
-    </span>
+    <span class="back">（谁）届出</span>
 
 </li>
 
 
-<li class="item" data-id="83">
+<li class="item"
+    data-id="83"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会赔钱需要：
-    </span>
+    <span class="front">保证协会赔钱需要：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        保证协会
-    </span>
+    <span class="answer" tabindex="0" role="button">保证协会</span>
 
-    <span class="back">
-        （谁）认证
-    </span>
+    <span class="back">（谁）认证</span>
 
 </li>
 
 
-<li class="item" data-id="84">
+<li class="item"
+    data-id="84"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        认证后找：
-    </span>
+    <span class="front">认证后找：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        供讬所
-    </span>
+    <span class="answer" tabindex="0" role="button">供讬所</span>
 
-    <span class="back">
-        （谁）拿钱
-    </span>
+    <span class="back">（谁）拿钱</span>
 
 </li>
 
 
-<li class="item" data-id="85">
+<li class="item"
+    data-id="85"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会赔完钱后不足要在：
-    </span>
+    <span class="front">保证协会赔完钱后不足要在：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        收到国土交通大臣的通知日开始2周内
-    </span>
+    <span class="answer" tabindex="0" role="button">收到国土交通大臣的通知日开始2周内</span>
 
-    <span class="back">
-        （什么时间）补上
-    </span>
+    <span class="back">（什么时间）补上</span>
 
 </li>
 
 
-<li class="item" data-id="86">
+<li class="item"
+    data-id="86"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证协会让宅建业者补钱，宅建业者要在：
-    </span>
+    <span class="front">保证协会让宅建业者补钱，宅建业者要在：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        收到纳付通知日开始2周内
-    </span>
+    <span class="answer" tabindex="0" role="button">收到纳付通知日开始2周内</span>
 
-    <span class="back">
-        （什么时间）补上
-    </span>
+    <span class="back">（什么时间）补上</span>
 
 </li>
 
 
-<li class="item" data-id="87">
+<li class="item"
+    data-id="87"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        补不上会员地位没了，需要在：
-    </span>
+    <span class="front">补不上会员地位没了，需要在：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1周内
-    </span>
+    <span class="answer" tabindex="0" role="button">1周内</span>
 
-    <span class="back">
-        （什么时间）供讬营业保证金
-    </span>
+    <span class="back">（什么时间）供讬营业保证金</span>
 
 </li>
 
 
-<li class="item" data-id="88">
+<li class="item"
+    data-id="88"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        退出社员要公告吗
-    </span>
+    <span class="front">退出社员要公告吗</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        是
-    </span>
+    <span class="answer" tabindex="0" role="button">是</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="89">
+<li class="item"
+    data-id="89"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        什么情况不用公告
-    </span>
+    <span class="front">什么情况不用公告</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        废弃事务所
-    </span>
+    <span class="answer" tabindex="0" role="button">废弃事务所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="90">
+<li class="item"
+    data-id="90"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        保证金准备金，社员在收到通知日起的：
-    </span>
+    <span class="front">保证金准备金，社员在收到通知日起的：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1个月内
-    </span>
+    <span class="answer" tabindex="0" role="button">1个月内</span>
 
-    <span class="back">
-        （什么时间）交
-    </span>
+    <span class="back">（什么时间）交</span>
 
 </li>
 
 
-<li class="item" data-id="91">
+<li class="item"
+    data-id="91"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        设置能申请和契约的案内所需要：
-    </span>
+    <span class="front">设置能申请和契约的案内所需要：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        10天前
-    </span>
+    <span class="answer" tabindex="0" role="button">10天前</span>
 
-    <span class="back">
-        （什么时间）届出
-    </span>
+    <span class="back">（什么时间）届出</span>
 
 </li>
 
 
-<li class="item" data-id="92">
+<li class="item"
+    data-id="92"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        向谁届出
-    </span>
+    <span class="front">向谁届出</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许权者和案内所所在地都道府县知事
-    </span>
+    <span class="answer" tabindex="0" role="button">免许权者和案内所所在地都道府县知事</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="93">
+<li class="item"
+    data-id="93"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建士人数不足是需要在
-    </span>
+    <span class="front">宅建士人数不足是需要在</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2周内
-    </span>
+    <span class="answer" tabindex="0" role="button">2周内</span>
 
-    <span class="back">
-        （什么时间）补上
-    </span>
+    <span class="back">（什么时间）补上</span>
 
 </li>
 
 
-<li class="item" data-id="94">
+<li class="item"
+    data-id="94"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        人员变动需要
-    </span>
+    <span class="front">人员变动需要</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        30天内届出
-    </span>
+    <span class="answer" tabindex="0" role="button">30天内届出</span>
 
-    <span class="back">
-        （什么时间做什么）
-    </span>
+    <span class="back">（什么时间做什么）</span>
 
 </li>
 
 
-<li class="item" data-id="95">
+<li class="item"
+    data-id="95"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识需要在什么地方揭示
-    </span>
+    <span class="front">标识需要在什么地方揭示</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        事务所和案内所
-    </span>
+    <span class="answer" tabindex="0" role="button">事务所和案内所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="96">
+<li class="item"
+    data-id="96"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识共通记载事项1：
-    </span>
+    <span class="front">标识共通记载事项1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许证番号
-    </span>
+    <span class="answer" tabindex="0" role="button">免许证番号</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="97">
+<li class="item"
+    data-id="97"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识共通记载事项2：
-    </span>
+    <span class="front">标识共通记载事项2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        免许有效期
-    </span>
+    <span class="answer" tabindex="0" role="button">免许有效期</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="98">
+<li class="item"
+    data-id="98"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识共通记载事项3：
-    </span>
+    <span class="front">标识共通记载事项3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        商号或名称
-    </span>
+    <span class="answer" tabindex="0" role="button">商号或名称</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="99">
+<li class="item"
+    data-id="99"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识共通记载事项4：
-    </span>
+    <span class="front">标识共通记载事项4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代表者氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">代表者氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="100">
+<li class="item"
+    data-id="100"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识共通记载事项5：
-    </span>
+    <span class="front">标识共通记载事项5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        本店所在地
-    </span>
+    <span class="answer" tabindex="0" role="button">本店所在地</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="101">
+<li class="item"
+    data-id="101"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识个别记载事项，事务所1：
-    </span>
+    <span class="front">标识个别记载事项，事务所1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代表者氏名
-    </span>
+    <span class="answer" tabindex="0" role="button">代表者氏名</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="102">
+<li class="item"
+    data-id="102"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识个别记载事项，事务所2：
-    </span>
+    <span class="front">标识个别记载事项，事务所2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        专任宅建士人数
-    </span>
+    <span class="answer" tabindex="0" role="button">专任宅建士人数</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="103">
+<li class="item"
+    data-id="103"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识个别记载事项，申请·契约案内所：
-    </span>
+    <span class="front">标识个别记载事项，申请·契约案内所：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        土地非定着要写适用冷静制度
-    </span>
+    <span class="answer" tabindex="0" role="button">土地非定着要写适用冷静制度</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="104">
+<li class="item"
+    data-id="104"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        标识个别记载事项，非申请·契约案内所：
-    </span>
+    <span class="front">标识个别记载事项，非申请·契约案内所：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        冷静制度适用
-    </span>
+    <span class="answer" tabindex="0" role="button">冷静制度适用</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="105">
+<li class="item"
+    data-id="105"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        案内所如果是代理或媒介其他宅建业者一团宅地建物的分让，还要怎么样
-    </span>
+    <span class="front">案内所如果是代理或媒介其他宅建业者一团宅地建物的分让，还要怎么样</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        把卖主的商号或名称以及免许证番号也写出来
-    </span>
+    <span class="answer" tabindex="0" role="button">把卖主的商号或名称以及免许证番号也写出来</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="106">
+<li class="item"
+    data-id="106"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        账本什么地方要有：
-    </span>
+    <span class="front">账本什么地方要有：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        各事务所
-    </span>
+    <span class="answer" tabindex="0" role="button">各事务所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="107">
+<li class="item"
+    data-id="107"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        账本保留多长时间：
-    </span>
+    <span class="front">账本保留多长时间：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        封账后保留5年，宅建业者卖自己的房子要保留10年
-    </span>
+    <span class="answer" tabindex="0" role="button">封账后保留5年，宅建业者卖自己的房子要保留10年</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="108">
+<li class="item"
+    data-id="108"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        从业者名簿什么地方要有：
-    </span>
+    <span class="front">从业者名簿什么地方要有：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        各事务所
-    </span>
+    <span class="answer" tabindex="0" role="button">各事务所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="109">
+<li class="item"
+    data-id="109"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        从业者名簿保留多长时间：
-    </span>
+    <span class="front">从业者名簿保留多长时间：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        最后记录之日开始10年
-    </span>
+    <span class="answer" tabindex="0" role="button">最后记录之日开始10年</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="110">
+<li class="item"
+    data-id="110"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        从业者名簿记录内容1：
-    </span>
+    <span class="front">从业者名簿记录内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        主要职务内容
-    </span>
+    <span class="answer" tabindex="0" role="button">主要职务内容</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="111">
+<li class="item"
+    data-id="111"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        从业者名簿记录内容2：
-    </span>
+    <span class="front">从业者名簿记录内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        入职年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">入职年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="112">
+<li class="item"
+    data-id="112"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        从业者名簿记录内容3：
-    </span>
+    <span class="front">从业者名簿记录内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        离职年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">离职年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="113">
+<li class="item"
+    data-id="113"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        从业者名簿记录内容4：
-    </span>
+    <span class="front">从业者名簿记录内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        是否是宅建士
-    </span>
+    <span class="answer" tabindex="0" role="button">是否是宅建士</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="114">
+<li class="item"
+    data-id="114"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        报酬额什么地方要有：
-    </span>
+    <span class="front">报酬额什么地方要有：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        各事务所
-    </span>
+    <span class="answer" tabindex="0" role="button">各事务所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="115">
+<li class="item"
+    data-id="115"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约有效期以及是否能更新：
-    </span>
+    <span class="front">媒介契约有效期以及是否能更新：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        3个月，不能更新
-    </span>
+    <span class="answer" tabindex="0" role="button">3个月，不能更新</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="116">
+<li class="item"
+    data-id="116"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        汇报频率，专属专任：
-    </span>
+    <span class="front">汇报频率，专属专任：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1周1次
-    </span>
+    <span class="answer" tabindex="0" role="button">1周1次</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="117">
+<li class="item"
+    data-id="117"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        汇报频率，专任：
-    </span>
+    <span class="front">汇报频率，专任：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2周1次
-    </span>
+    <span class="answer" tabindex="0" role="button">2周1次</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="118">
+<li class="item"
+    data-id="118"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        多少天内登录指定流通机构：
-    </span>
+    <span class="front">多少天内登录指定流通机构：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        专任7天，专属专任5天，不包含工作日
-    </span>
+    <span class="answer" tabindex="0" role="button">专任7天，专属专任5天，不包含工作日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="119">
+<li class="item"
+    data-id="119"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        登陆内容1：
-    </span>
+    <span class="front">登陆内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅地建物所在、规模、形质，买卖价格/交换评价额
-    </span>
+    <span class="answer" tabindex="0" role="button">宅地建物所在、规模、形质，买卖价格/交换评价额</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="120">
+<li class="item"
+    data-id="120"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        登陆内容2：
-    </span>
+    <span class="front">登陆内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅地建物相关都市计划法限制
-    </span>
+    <span class="answer" tabindex="0" role="button">宅地建物相关都市计划法限制</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="121">
+<li class="item"
+    data-id="121"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        登陆内容3：
-    </span>
+    <span class="front">登陆内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        专属专任的话注明
-    </span>
+    <span class="answer" tabindex="0" role="button">专属专任的话注明</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="122">
+<li class="item"
+    data-id="122"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        登陆内容4：
-    </span>
+    <span class="front">登陆内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅地建物取引申请受付状况
-    </span>
+    <span class="answer" tabindex="0" role="button">宅地建物取引申请受付状况</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="123">
+<li class="item"
+    data-id="123"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约成立后通知事项1：
-    </span>
+    <span class="front">媒介契约成立后通知事项1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        登录番号
-    </span>
+    <span class="answer" tabindex="0" role="button">登录番号</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="124">
+<li class="item"
+    data-id="124"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约成立后通知事项2：
-    </span>
+    <span class="front">媒介契约成立后通知事项2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅地建物交易价格
-    </span>
+    <span class="answer" tabindex="0" role="button">宅地建物交易价格</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="125">
+<li class="item"
+    data-id="125"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约成立后通知事项3：
-    </span>
+    <span class="front">媒介契约成立后通知事项3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        买卖交换契约成立年月日
-    </span>
+    <span class="answer" tabindex="0" role="button">买卖交换契约成立年月日</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="126">
+<li class="item"
+    data-id="126"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        买卖交换和赁借媒介契约缔结时，要立刻交付书面？
-    </span>
+    <span class="front">买卖交换和赁借媒介契约缔结时，要立刻交付书面？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        买卖交换需要，赁借不用
-    </span>
+    <span class="answer" tabindex="0" role="button">买卖交换需要，赁借不用</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="127">
+<li class="item"
+    data-id="127"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容1：
-    </span>
+    <span class="front">媒介契约书面记载内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        能特定宅地建物的必要表示
-    </span>
+    <span class="answer" tabindex="0" role="button">能特定宅地建物的必要表示</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="128">
+<li class="item"
+    data-id="128"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容2：
-    </span>
+    <span class="front">媒介契约书面记载内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        买卖价格/交换评价额（价格意见要明示根据，可以口头）
-    </span>
+    <span class="answer" tabindex="0" role="button">买卖价格/交换评价额（价格意见要明示根据，可以口头）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="129">
+<li class="item"
+    data-id="129"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容3：
-    </span>
+    <span class="front">媒介契约书面记载内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        媒介契约种类
-    </span>
+    <span class="answer" tabindex="0" role="button">媒介契约种类</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="130">
+<li class="item"
+    data-id="130"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容4：
-    </span>
+    <span class="front">媒介契约书面记载内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        报酬
-    </span>
+    <span class="answer" tabindex="0" role="button">报酬</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="131">
+<li class="item"
+    data-id="131"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容5：
-    </span>
+    <span class="front">媒介契约书面记载内容5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        有效期和解除事项
-    </span>
+    <span class="answer" tabindex="0" role="button">有效期和解除事项</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="132">
+<li class="item"
+    data-id="132"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容6：
-    </span>
+    <span class="front">媒介契约书面记载内容6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        违反契约的措施
-    </span>
+    <span class="answer" tabindex="0" role="button">违反契约的措施</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="133">
+<li class="item"
+    data-id="133"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容7：
-    </span>
+    <span class="front">媒介契约书面记载内容7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        是否基于标准媒介约款
-    </span>
+    <span class="answer" tabindex="0" role="button">是否基于标准媒介约款</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="134">
+<li class="item"
+    data-id="134"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容8：
-    </span>
+    <span class="front">媒介契约书面记载内容8：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        指定流通机构登录事项（一般也不能省略）
-    </span>
+    <span class="answer" tabindex="0" role="button">指定流通机构登录事项（一般也不能省略）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="135">
+<li class="item"
+    data-id="135"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介契约书面记载内容9：
-    </span>
+    <span class="front">媒介契约书面记载内容9：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        既存建物，依赖者建物状况调查实施斡旋（标准媒介约款时没有的话要记录理由）
-    </span>
+    <span class="answer" tabindex="0" role="button">既存建物，依赖者建物状况调查实施斡旋（标准媒介约款时没有的话要记录理由）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="136">
+<li class="item"
+    data-id="136"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        规制对象广告内容1：
-    </span>
+    <span class="front">规制对象广告内容1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        所在、规模、形质
-    </span>
+    <span class="answer" tabindex="0" role="button">所在、规模、形质</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="137">
+<li class="item"
+    data-id="137"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        规制对象广告内容2：
-    </span>
+    <span class="front">规制对象广告内容2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        现在将来利用限制、环境、交通及其他利便
-    </span>
+    <span class="answer" tabindex="0" role="button">现在将来利用限制、环境、交通及其他利便</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="138">
+<li class="item"
+    data-id="138"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        规制对象广告内容3：
-    </span>
+    <span class="front">规制对象广告内容3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金、借赁等对价的额、支付方法
-    </span>
+    <span class="answer" tabindex="0" role="button">代金、借赁等对价的额、支付方法</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="139">
+<li class="item"
+    data-id="139"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        规制对象广告内容4：
-    </span>
+    <span class="front">规制对象广告内容4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金、交换差金相关金钱贷借的斡旋
-    </span>
+    <span class="answer" tabindex="0" role="button">代金、交换差金相关金钱贷借的斡旋</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="140">
+<li class="item"
+    data-id="140"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        广告开始时期：
-    </span>
+    <span class="front">广告开始时期：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        未完成物件获得开发许可或建筑确认前，不能广告也不能契约
-    </span>
+    <span class="answer" tabindex="0" role="button">未完成物件获得开发许可或建筑确认前，不能广告也不能契约</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="141">
+<li class="item"
+    data-id="141"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        例外：
-    </span>
+    <span class="front">例外：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        贷借可以契约不能广告
-    </span>
+    <span class="answer" tabindex="0" role="button">贷借可以契约不能广告</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="142">
+<li class="item"
+    data-id="142"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        重要事项要在
-    </span>
+    <span class="front">重要事项要在</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        契约前
-    </span>
+    <span class="answer" tabindex="0" role="button">契约前</span>
 
-    <span class="back">
-        （什么时候）进行
-    </span>
+    <span class="back">（什么时候）进行</span>
 
 </li>
 
 
-<li class="item" data-id="143">
+<li class="item"
+    data-id="143"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        重要事项要向
-    </span>
+    <span class="front">重要事项要向</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        买主或者借主
-    </span>
+    <span class="answer" tabindex="0" role="button">买主或者借主</span>
 
-    <span class="back">
-        （谁）进行
-    </span>
+    <span class="back">（谁）进行</span>
 
 </li>
 
 
-<li class="item" data-id="144">
+<li class="item"
+    data-id="144"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        重要事项要做什么：
-    </span>
+    <span class="front">重要事项要做什么：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        书面交付和说明
-    </span>
+    <span class="answer" tabindex="0" role="button">书面交付和说明</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="145">
+<li class="item"
+    data-id="145"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        重要事项说明没提示宅建士证要罚多少钱
-    </span>
+    <span class="front">重要事项说明没提示宅建士证要罚多少钱</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        10万日元
-    </span>
+    <span class="answer" tabindex="0" role="button">10万日元</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="146">
+<li class="item"
+    data-id="146"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关1：
-    </span>
+    <span class="front">35条内容，物件相关1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        登记权利种类·内容
-    </span>
+    <span class="answer" tabindex="0" role="button">登记权利种类·内容</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="147">
+<li class="item"
+    data-id="147"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关2：
-    </span>
+    <span class="front">35条内容，物件相关2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        法令上的限制（租房不用说建蔽率、容积率之类的）
-    </span>
+    <span class="answer" tabindex="0" role="button">法令上的限制（租房不用说建蔽率、容积率之类的）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="148">
+<li class="item"
+    data-id="148"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关3：
-    </span>
+    <span class="front">35条内容，物件相关3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        私道负担（没有的话也得说一句没有，租房不用说）
-    </span>
+    <span class="answer" tabindex="0" role="button">私道负担（没有的话也得说一句没有，租房不用说）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="149">
+<li class="item"
+    data-id="149"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关4：
-    </span>
+    <span class="front">35条内容，物件相关4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        电气、瓦斯、水道供给设施，排水设施整备状况
-    </span>
+    <span class="answer" tabindex="0" role="button">电气、瓦斯、水道供给设施，排水设施整备状况</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="150">
+<li class="item"
+    data-id="150"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关5：
-    </span>
+    <span class="front">35条内容，物件相关5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        既存建物，建物状况调查结果概要（实施1年内公寓等2年），维持保全状况书类保存状况（租房不用）
-    </span>
+    <span class="answer" tabindex="0" role="button">既存建物，建物状况调查结果概要（实施1年内公寓等2年），维持保全状况书类保存状况（租房不用）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="151">
+<li class="item"
+    data-id="151"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关6：
-    </span>
+    <span class="front">35条内容，物件相关6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        未完成物件完成时的形状构造等
-    </span>
+    <span class="answer" tabindex="0" role="button">未完成物件完成时的形状构造等</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="152">
+<li class="item"
+    data-id="152"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关7：
-    </span>
+    <span class="front">35条内容，物件相关7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        造成宅地是否在防灾区域内
-    </span>
+    <span class="answer" tabindex="0" role="button">造成宅地是否在防灾区域内</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="153">
+<li class="item"
+    data-id="153"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关8：
-    </span>
+    <span class="front">35条内容，物件相关8：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        是否在土砂灾害警戒区域内
-    </span>
+    <span class="answer" tabindex="0" role="button">是否在土砂灾害警戒区域内</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="154">
+<li class="item"
+    data-id="154"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关9：
-    </span>
+    <span class="front">35条内容，物件相关9：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        是否在津波灾害境界区域内
-    </span>
+    <span class="answer" tabindex="0" role="button">是否在津波灾害境界区域内</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="155">
+<li class="item"
+    data-id="155"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关10：
-    </span>
+    <span class="front">35条内容，物件相关10：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        基于水害地图，交易对象宅地建物所在地
-    </span>
+    <span class="answer" tabindex="0" role="button">基于水害地图，交易对象宅地建物所在地</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="156">
+<li class="item"
+    data-id="156"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关11：
-    </span>
+    <span class="front">35条内容，物件相关11：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        石棉适用调查内容
-    </span>
+    <span class="answer" tabindex="0" role="button">石棉适用调查内容</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="157">
+<li class="item"
+    data-id="157"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关12：
-    </span>
+    <span class="front">35条内容，物件相关12：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        耐震诊断的内容，昭和56年（1981）6月1日前
-    </span>
+    <span class="answer" tabindex="0" role="button">耐震诊断的内容，昭和56年（1981）6月1日前</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="158">
+<li class="item"
+    data-id="158"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，物件相关13：
-    </span>
+    <span class="front">35条内容，物件相关13：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        接受住宅性能评价的新筑住宅（仅买房，仅新房）
-    </span>
+    <span class="answer" tabindex="0" role="button">接受住宅性能评价的新筑住宅（仅买房，仅新房）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="159">
+<li class="item"
+    data-id="159"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有1：
-    </span>
+    <span class="front">35条内容，区分所有1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        敷地权利种类·内容
-    </span>
+    <span class="answer" tabindex="0" role="button">敷地权利种类·内容</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="160">
+<li class="item"
+    data-id="160"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有2：
-    </span>
+    <span class="front">35条内容，区分所有2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        共用部分规制
-    </span>
+    <span class="answer" tabindex="0" role="button">共用部分规制</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="161">
+<li class="item"
+    data-id="161"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有3：
-    </span>
+    <span class="front">35条内容，区分所有3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        专有部分用途及利用限制（租房得说）
-    </span>
+    <span class="answer" tabindex="0" role="button">专有部分用途及利用限制（租房得说）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="162">
+<li class="item"
+    data-id="162"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有4：
-    </span>
+    <span class="front">35条内容，区分所有4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        专用使用权
-    </span>
+    <span class="answer" tabindex="0" role="button">专用使用权</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="163">
+<li class="item"
+    data-id="163"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有5：
-    </span>
+    <span class="front">35条内容，区分所有5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        建物所有者负担费用特定者减免
-    </span>
+    <span class="answer" tabindex="0" role="button">建物所有者负担费用特定者减免</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="164">
+<li class="item"
+    data-id="164"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有6：
-    </span>
+    <span class="front">35条内容，区分所有6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        修缮积立金内容、已积立金额
-    </span>
+    <span class="answer" tabindex="0" role="button">修缮积立金内容、已积立金额</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="165">
+<li class="item"
+    data-id="165"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有7：
-    </span>
+    <span class="front">35条内容，区分所有7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        通常管理费用金额
-    </span>
+    <span class="answer" tabindex="0" role="button">通常管理费用金额</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="166">
+<li class="item"
+    data-id="166"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有8：
-    </span>
+    <span class="front">35条内容，区分所有8：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        管理委托方的氏名、住所（租房得说）
-    </span>
+    <span class="answer" tabindex="0" role="button">管理委托方的氏名、住所（租房得说）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="167">
+<li class="item"
+    data-id="167"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，区分所有9：
-    </span>
+    <span class="front">35条内容，区分所有9：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        建物维持修缮实施状况
-    </span>
+    <span class="answer" tabindex="0" role="button">建物维持修缮实施状况</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="168">
+<li class="item"
+    data-id="168"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关1：
-    </span>
+    <span class="front">35条内容，交易相关1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金、交换差金、借赁以外授受的金钱（手付金、敷金、礼金等）
-    </span>
+    <span class="answer" tabindex="0" role="button">代金、交换差金、借赁以外授受的金钱（手付金、敷金、礼金等）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="169">
+<li class="item"
+    data-id="169"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关2：
-    </span>
+    <span class="front">35条内容，交易相关2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        契约的届出
-    </span>
+    <span class="answer" tabindex="0" role="button">契约的届出</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="170">
+<li class="item"
+    data-id="170"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关3：
-    </span>
+    <span class="front">35条内容，交易相关3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        损害赔偿额的预定、违约金
-    </span>
+    <span class="answer" tabindex="0" role="button">损害赔偿额的预定、违约金</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="171">
+<li class="item"
+    data-id="171"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关4：
-    </span>
+    <span class="front">35条内容，交易相关4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        手付金保全措施概要（租房不用）
-    </span>
+    <span class="answer" tabindex="0" role="button">手付金保全措施概要（租房不用）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="172">
+<li class="item"
+    data-id="172"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关5：
-    </span>
+    <span class="front">35条内容，交易相关5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        支付金、預り金有没有保全措施，有的话讲概要，支付金定义如下：不满50万、没讲保全措施的手付金、卖主·交换当事人宅建业者登记以后受领的、不包含报酬
-    </span>
+    <span class="answer" tabindex="0" role="button">支付金、預り金有没有保全措施，有的话讲概要，支付金定义如下：不满50万、没讲保全措施的手付金、卖主·交换当事人宅建业者登记以后受领的、不包含报酬</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="173">
+<li class="item"
+    data-id="173"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关6：
-    </span>
+    <span class="front">35条内容，交易相关6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金、交换差金相关贷款斡旋内容、贷款不成立时的措施（租房不用）
-    </span>
+    <span class="answer" tabindex="0" role="button">代金、交换差金相关贷款斡旋内容、贷款不成立时的措施（租房不用）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="174">
+<li class="item"
+    data-id="174"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，交易相关7：
-    </span>
+    <span class="front">35条内容，交易相关7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        一定担保责任（租房不用），“合同约定卖方不承担契约不适合责任”不用说明，担保责任履行措施概要要说明（没有也要说没有）
-    </span>
+    <span class="answer" tabindex="0" role="button">一定担保责任（租房不用），“合同约定卖方不承担契约不适合责任”不用说明，担保责任履行措施概要要说明（没有也要说没有）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="175">
+<li class="item"
+    data-id="175"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关1：
-    </span>
+    <span class="front">35条内容，赁贷相关1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        台所、浴室、便所（只租房说）
-    </span>
+    <span class="answer" tabindex="0" role="button">台所、浴室、便所（只租房说）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="176">
+<li class="item"
+    data-id="176"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关2：
-    </span>
+    <span class="front">35条内容，赁贷相关2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        契约期间·更新
-    </span>
+    <span class="answer" tabindex="0" role="button">契约期间·更新</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="177">
+<li class="item"
+    data-id="177"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关3：
-    </span>
+    <span class="front">35条内容，赁贷相关3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        用途和利用限制
-    </span>
+    <span class="answer" tabindex="0" role="button">用途和利用限制</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="178">
+<li class="item"
+    data-id="178"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关4：
-    </span>
+    <span class="front">35条内容，赁贷相关4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        管理委托方氏名和住所
-    </span>
+    <span class="answer" tabindex="0" role="button">管理委托方氏名和住所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="179">
+<li class="item"
+    data-id="179"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关5：
-    </span>
+    <span class="front">35条内容，赁贷相关5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        敷金和其他精算金钱
-    </span>
+    <span class="answer" tabindex="0" role="button">敷金和其他精算金钱</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="180">
+<li class="item"
+    data-id="180"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关6：
-    </span>
+    <span class="front">35条内容，赁贷相关6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        定期借地权
-    </span>
+    <span class="answer" tabindex="0" role="button">定期借地权</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="181">
+<li class="item"
+    data-id="181"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关7：
-    </span>
+    <span class="front">35条内容，赁贷相关7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        定期建物赁贷借
-    </span>
+    <span class="answer" tabindex="0" role="button">定期建物赁贷借</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="182">
+<li class="item"
+    data-id="182"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关8：
-    </span>
+    <span class="front">35条内容，赁贷相关8：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        高龄居住安定确保终身建物赁贷借（直到借主死）
-    </span>
+    <span class="answer" tabindex="0" role="button">高龄居住安定确保终身建物赁贷借（直到借主死）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="183">
+<li class="item"
+    data-id="183"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        35条内容，赁贷相关9：
-    </span>
+    <span class="front">35条内容，赁贷相关9：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        契约结束时宅地建物取坏
-    </span>
+    <span class="answer" tabindex="0" role="button">契约结束时宅地建物取坏</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="184">
+<li class="item"
+    data-id="184"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，必须要有1：
-    </span>
+    <span class="front">37条内容，必须要有1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        当事者氏名和住所
-    </span>
+    <span class="answer" tabindex="0" role="button">当事者氏名和住所</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="185">
+<li class="item"
+    data-id="185"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，必须要有2：
-    </span>
+    <span class="front">37条内容，必须要有2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        宅地建物特定必要表示
-    </span>
+    <span class="answer" tabindex="0" role="button">宅地建物特定必要表示</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="186">
+<li class="item"
+    data-id="186"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，必须要有3：
-    </span>
+    <span class="front">37条内容，必须要有3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金·交换差金·租金额·支付时期·支付方法
-    </span>
+    <span class="answer" tabindex="0" role="button">代金·交换差金·租金额·支付时期·支付方法</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="187">
+<li class="item"
+    data-id="187"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，必须要有4：
-    </span>
+    <span class="front">37条内容，必须要有4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        引渡时期
-    </span>
+    <span class="answer" tabindex="0" role="button">引渡时期</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="188">
+<li class="item"
+    data-id="188"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，必须要有5：
-    </span>
+    <span class="front">37条内容，必须要有5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        转移登记申请时期
-    </span>
+    <span class="answer" tabindex="0" role="button">转移登记申请时期</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="189">
+<li class="item"
+    data-id="189"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，必须要有6：
-    </span>
+    <span class="front">37条内容，必须要有6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        既存建筑物构造耐力
-    </span>
+    <span class="answer" tabindex="0" role="button">既存建筑物构造耐力</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="190">
+<li class="item"
+    data-id="190"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记1：
-    </span>
+    <span class="front">37条内容，定了要记1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金·交换差金·租金以外金钱授受（手付·敷金·礼金之类）
-    </span>
+    <span class="answer" tabindex="0" role="button">代金·交换差金·租金以外金钱授受（手付·敷金·礼金之类）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="191">
+<li class="item"
+    data-id="191"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记2：
-    </span>
+    <span class="front">37条内容，定了要记2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        契约解除
-    </span>
+    <span class="answer" tabindex="0" role="button">契约解除</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="192">
+<li class="item"
+    data-id="192"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记3：
-    </span>
+    <span class="front">37条内容，定了要记3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        损害赔偿额预定·违约金
-    </span>
+    <span class="answer" tabindex="0" role="button">损害赔偿额预定·违约金</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="193">
+<li class="item"
+    data-id="193"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记4：
-    </span>
+    <span class="front">37条内容，定了要记4：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        天灾损害负担
-    </span>
+    <span class="answer" tabindex="0" role="button">天灾损害负担</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="194">
+<li class="item"
+    data-id="194"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记5：
-    </span>
+    <span class="front">37条内容，定了要记5：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金·交换差金贷款斡旋
-    </span>
+    <span class="answer" tabindex="0" role="button">代金·交换差金贷款斡旋</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="195">
+<li class="item"
+    data-id="195"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记6：
-    </span>
+    <span class="front">37条内容，定了要记6：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        一定的担保责任
-    </span>
+    <span class="answer" tabindex="0" role="button">一定的担保责任</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="196">
+<li class="item"
+    data-id="196"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        37条内容，定了要记7：
-    </span>
+    <span class="front">37条内容，定了要记7：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        租税公课
-    </span>
+    <span class="answer" tabindex="0" role="button">租税公课</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="197">
+<li class="item"
+    data-id="197"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        禁止不当履行延迟1：
-    </span>
+    <span class="front">禁止不当履行延迟1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        登记
-    </span>
+    <span class="answer" tabindex="0" role="button">登记</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="198">
+<li class="item"
+    data-id="198"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        禁止不当履行延迟2：
-    </span>
+    <span class="front">禁止不当履行延迟2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        引渡
-    </span>
+    <span class="answer" tabindex="0" role="button">引渡</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="199">
+<li class="item"
+    data-id="199"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        禁止不当履行延迟3：
-    </span>
+    <span class="front">禁止不当履行延迟3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金支付
-    </span>
+    <span class="answer" tabindex="0" role="button">代金支付</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="200">
+<li class="item"
+    data-id="200"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业者是否能以行为能力限制取消？
-    </span>
+    <span class="front">宅建业者是否能以行为能力限制取消？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        不能
-    </span>
+    <span class="answer" tabindex="0" role="button">不能</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="201">
+<li class="item"
+    data-id="201"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        冷静制度多少天内可以？
-    </span>
+    <span class="front">冷静制度多少天内可以？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        告知之日起8天内可以，过了不行
-    </span>
+    <span class="answer" tabindex="0" role="button">告知之日起8天内可以，过了不行</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="202">
+<li class="item"
+    data-id="202"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        冷静制度什么情况就不行了
-    </span>
+    <span class="front">冷静制度什么情况就不行了</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        引渡且支付全款
-    </span>
+    <span class="answer" tabindex="0" role="button">引渡且支付全款</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="203">
+<li class="item"
+    data-id="203"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        以什么时间判断？发出？收到？
-    </span>
+    <span class="front">以什么时间判断？发出？收到？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        发出
-    </span>
+    <span class="answer" tabindex="0" role="button">发出</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="204">
+<li class="item"
+    data-id="204"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        宅建业法规定的担保责任，什么样的特约有效
-    </span>
+    <span class="front">宅建业法规定的担保责任，什么样的特约有效</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        引渡开始2年以上
-    </span>
+    <span class="answer" tabindex="0" role="button">引渡开始2年以上</span>
 
-    <span class="back">
-        （什么时间开始多长时间内）
-    </span>
+    <span class="back">（什么时间开始多长时间内）</span>
 
 </li>
 
 
-<li class="item" data-id="205">
+<li class="item"
+    data-id="205"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        损害赔偿额或违约金先定的话不超过
-    </span>
+    <span class="front">损害赔偿额或违约金先定的话不超过</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2/10
-    </span>
+    <span class="answer" tabindex="0" role="button">2/10</span>
 
-    <span class="back">
-        比例
-    </span>
+    <span class="back">比例</span>
 
 </li>
 
 
-<li class="item" data-id="206">
+<li class="item"
+    data-id="206"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        没定的话，赔多少？
-    </span>
+    <span class="front">没定的话，赔多少？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        实际损失额
-    </span>
+    <span class="answer" tabindex="0" role="button">实际损失额</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="207">
+<li class="item"
+    data-id="207"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        手付金，宅建业法规定不超过
-    </span>
+    <span class="front">手付金，宅建业法规定不超过</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2/10
-    </span>
+    <span class="answer" tabindex="0" role="button">2/10</span>
 
-    <span class="back">
-        比例
-    </span>
+    <span class="back">比例</span>
 
 </li>
 
 
-<li class="item" data-id="208">
+<li class="item"
+    data-id="208"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        未完成物件保全措施1：
-    </span>
+    <span class="front">未完成物件保全措施1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        银行等
-    </span>
+    <span class="answer" tabindex="0" role="button">银行等</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="209">
+<li class="item"
+    data-id="209"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        未完成物件保全措施2：
-    </span>
+    <span class="front">未完成物件保全措施2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        保险会社
-    </span>
+    <span class="answer" tabindex="0" role="button">保险会社</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="210">
+<li class="item"
+    data-id="210"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        完成物件保全措施1：
-    </span>
+    <span class="front">完成物件保全措施1：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        银行等
-    </span>
+    <span class="answer" tabindex="0" role="button">银行等</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="211">
+<li class="item"
+    data-id="211"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        完成物件保全措施2：
-    </span>
+    <span class="front">完成物件保全措施2：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        保险会社
-    </span>
+    <span class="answer" tabindex="0" role="button">保险会社</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="212">
+<li class="item"
+    data-id="212"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        完成物件保全措施3：
-    </span>
+    <span class="front">完成物件保全措施3：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        指定保管机关（保证协会）
-    </span>
+    <span class="answer" tabindex="0" role="button">指定保管机关（保证协会）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="213">
+<li class="item"
+    data-id="213"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        不需要保全措施：
-    </span>
+    <span class="front">不需要保全措施：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        买主已经所有权转移登记了
-    </span>
+    <span class="answer" tabindex="0" role="button">买主已经所有权转移登记了</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="214">
+<li class="item"
+    data-id="214"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        未完成物件，不需要保全措施的金额：
-    </span>
+    <span class="front">未完成物件，不需要保全措施的金额：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金 5%（含税）以下且1000万以下
-    </span>
+    <span class="answer" tabindex="0" role="button">代金 5%（含税）以下且1000万以下</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="215">
+<li class="item"
+    data-id="215"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        完成物件，不需要保全措施的金额：
-    </span>
+    <span class="front">完成物件，不需要保全措施的金额：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        代金 10% 以下且1000万以下
-    </span>
+    <span class="answer" tabindex="0" role="button">代金 10% 以下且1000万以下</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="216">
+<li class="item"
+    data-id="216"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        割赋贩售分期要在引渡后多长时间以上分几次才行
-    </span>
+    <span class="front">割赋贩售分期要在引渡后多长时间以上分几次才行</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1年，2次
-    </span>
+    <span class="answer" tabindex="0" role="button">1年，2次</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="217">
+<li class="item"
+    data-id="217"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        买主没交钱，要催告多少天：
-    </span>
+    <span class="front">买主没交钱，要催告多少天：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        30
-    </span>
+    <span class="answer" tabindex="0" role="button">30</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="218">
+<li class="item"
+    data-id="218"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        所有权留保：收到多少比例的房款就不行了
-    </span>
+    <span class="front">所有权留保：收到多少比例的房款就不行了</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        3/10
-    </span>
+    <span class="answer" tabindex="0" role="button">3/10</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="219">
+<li class="item"
+    data-id="219"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        报酬税率：总税率，消费税率和地方消费税率分别是多少？
-    </span>
+    <span class="front">报酬税率：总税率，消费税率和地方消费税率分别是多少？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        税率10%（消费税率7.8%，地方消费税率2.2%）
-    </span>
+    <span class="answer" tabindex="0" role="button">税率10%（消费税率7.8%，地方消费税率2.2%）</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="220">
+<li class="item"
+    data-id="220"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        什么不课税
-    </span>
+    <span class="front">什么不课税</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        土地、居住用贷借
-    </span>
+    <span class="answer" tabindex="0" role="button">土地、居住用贷借</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="221">
+<li class="item"
+    data-id="221"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        报酬税额，课税业者和非课税业者分别是多少：
-    </span>
+    <span class="front">报酬税额，课税业者和非课税业者分别是多少：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1.1和1.04
-    </span>
+    <span class="answer" tabindex="0" role="button">1.1和1.04</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="222">
+<li class="item"
+    data-id="222"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        买卖交换报酬限度，200万以内：
-    </span>
+    <span class="front">买卖交换报酬限度，200万以内：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        0.05
-    </span>
+    <span class="answer" tabindex="0" role="button">0.05</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="223">
+<li class="item"
+    data-id="223"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        买卖交换报酬限度，200万~400万：
-    </span>
+    <span class="front">买卖交换报酬限度，200万~400万：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        4%+2
-    </span>
+    <span class="answer" tabindex="0" role="button">4%+2</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="224">
+<li class="item"
+    data-id="224"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        买卖交换报酬限度，400万以上：
-    </span>
+    <span class="front">买卖交换报酬限度，400万以上：</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        3%+6
-    </span>
+    <span class="answer" tabindex="0" role="button">3%+6</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="225">
+<li class="item"
+    data-id="225"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        媒介是
-    </span>
+    <span class="front">媒介是</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1
-    </span>
+    <span class="answer" tabindex="0" role="button">1</span>
 
-    <span class="back">
-        倍
-    </span>
+    <span class="back">倍</span>
 
 </li>
 
 
-<li class="item" data-id="226">
+<li class="item"
+    data-id="226"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        代理是
-    </span>
+    <span class="front">代理是</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2
-    </span>
+    <span class="answer" tabindex="0" role="button">2</span>
 
-    <span class="back">
-        倍
-    </span>
+    <span class="back">倍</span>
 
 </li>
 
 
-<li class="item" data-id="227">
+<li class="item"
+    data-id="227"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        800万以下宅地建物不管使用状态，最多多少钱，代理的话呢？
-    </span>
+    <span class="front">800万以下宅地建物不管使用状态，最多多少钱，代理的话呢？</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        33万，代理2倍
-    </span>
+    <span class="answer" tabindex="0" role="button">33万，代理2倍</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="228">
+<li class="item"
+    data-id="228"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        赁借的报酬额
-    </span>
+    <span class="front">赁借的报酬额</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        1个月租金
-    </span>
+    <span class="answer" tabindex="0" role="button">1个月租金</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="229">
+<li class="item"
+    data-id="229"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        没有允许的话，最多从借主收多少
-    </span>
+    <span class="front">没有允许的话，最多从借主收多少</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        半个月租金
-    </span>
+    <span class="answer" tabindex="0" role="button">半个月租金</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
 
 </li>
 
 
-<li class="item" data-id="230">
+<li class="item"
+    data-id="230"
+    data-category="宅建业法">
 
-    <input
-        class="item-check"
-        type="checkbox"
-    >
+    <input class="item-check" type="checkbox">
 
-    <span class="front">
-        长期空家多少倍
-    </span>
+    <span class="front">长期空家多少倍</span>
 
-    <span
-        class="answer"
-        tabindex="0"
-        role="button"
-    >
-        2.2倍
-    </span>
+    <span class="answer" tabindex="0" role="button">2.2倍</span>
 
-    <span class="back">
-        
-    </span>
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="231"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【指示处分】事由1：</span>
+
+    <span class="answer" tabindex="0" role="button">业务相关违反宅建业法以外法令，宅建业者不适当</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="232"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【指示处分】事由2：</span>
+
+    <span class="answer" tabindex="0" role="button">宅建士受指示处分，归责于宅建业者</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="233"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【指示处分】事由3：</span>
+
+    <span class="answer" tabindex="0" role="button">业务相关对交易关系者造成损害或可能造成损害</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="234"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【指示处分】事由4：</span>
+
+    <span class="answer" tabindex="0" role="button">违反宅建业法</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="235"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由1：</span>
+
+    <span class="answer" tabindex="0" role="button">同指示处分1</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="236"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由2：</span>
+
+    <span class="answer" tabindex="0" role="button">同指示处分2</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="237"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由3：</span>
+
+    <span class="answer" tabindex="0" role="button">违反指示处分</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="238"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由4：</span>
+
+    <span class="answer" tabindex="0" role="button">宅建业相关不正或显著不正行为</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="239"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5：</span>
+
+    <span class="answer" tabindex="0" role="button">违反宅建业法一定规定</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="240"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定1：</span>
+
+    <span class="answer" tabindex="0" role="button">夸大广告</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="241"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定2：</span>
+
+    <span class="answer" tabindex="0" role="button">没明示取引态样</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="242"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定3：</span>
+
+    <span class="answer" tabindex="0" role="button">没交付34条</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="243"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定4：</span>
+
+    <span class="answer" tabindex="0" role="button">没交付或说明35条</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="244"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定5：</span>
+
+    <span class="answer" tabindex="0" role="button">没交付37条</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="245"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定6：</span>
+
+    <span class="answer" tabindex="0" role="button">超过报酬额</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="246"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定7：</span>
+
+    <span class="answer" tabindex="0" role="button">没带从业证</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="247"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定8：</span>
+
+    <span class="answer" tabindex="0" role="button">违反守秘义务</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="248"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定9：</span>
+
+    <span class="answer" tabindex="0" role="button">违反专任宅建士设置</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="249"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【事务停止处分】事由5的规定10：</span>
+
+    <span class="answer" tabindex="0" role="button">违反营业保证金或保证协会</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="250"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【可以】取消的1：</span>
+
+    <span class="answer" tabindex="0" role="button">保证金供讬没届出</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="251"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【可以】取消的2：</span>
+
+    <span class="answer" tabindex="0" role="button">宅建业者所在地不明（免许权者不知道所在会进行公告，公告日开始30天内宅建业者没申出）</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="252"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的1：</span>
+
+    <span class="answer" tabindex="0" role="button">不正手段获得免许</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="253"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的2：</span>
+
+    <span class="answer" tabindex="0" role="button">有业务停止处分行为情状特别严重</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="254"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的3：</span>
+
+    <span class="answer" tabindex="0" role="button">违反业务停止处分</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="255"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的4：</span>
+
+    <span class="answer" tabindex="0" role="button">心身故障和破产者</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="256"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的5：</span>
+
+    <span class="answer" tabindex="0" role="button">禁锢以上刑</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="257"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的6：</span>
+
+    <span class="answer" tabindex="0" role="button">违法宅建业法、暴力犯罪、背任罪罚金以上</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="258"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的7：</span>
+
+    <span class="answer" tabindex="0" role="button">暴力团</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="259"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的8：</span>
+
+    <span class="answer" tabindex="0" role="button">未成年法定代理人欠格事由</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="260"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的9：</span>
+
+    <span class="answer" tabindex="0" role="button">法人的役员、政令使用人欠格事由</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="261"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的10：</span>
+
+    <span class="answer" tabindex="0" role="button">获得免许1年以内没开始事业的或者1年以上休业的</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="262"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建业者【免许取消处分】事由之【必须】取消的11：</span>
+
+    <span class="answer" tabindex="0" role="button">发生免许更换但是没获得新免许的</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="263"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">国土交通大臣对宅建业者进行监督处分前要和内阁总理大臣协议的1：</span>
+
+    <span class="answer" tabindex="0" role="button">违反35条说明</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="264"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">国土交通大臣对宅建业者进行监督处分前要和内阁总理大臣协议的2：</span>
+
+    <span class="answer" tabindex="0" role="button">违反37条交付</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="265"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">国土交通大臣对宅建业者进行监督处分前要和内阁总理大臣协议的3：</span>
+
+    <span class="answer" tabindex="0" role="button">夸大广告</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="266"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">国土交通大臣对宅建业者进行监督处分前要和内阁总理大臣协议的4：</span>
+
+    <span class="answer" tabindex="0" role="button">取引态样未明示</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="267"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">国土交通大臣对宅建业者进行监督处分前要和内阁总理大臣协议的5：</span>
+
+    <span class="answer" tabindex="0" role="button">违反守秘义务</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="268"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建士【指示】事由1：</span>
+
+    <span class="answer" tabindex="0" role="button">在两个事务所做专任宅建士</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="269"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建士【指示】事由2：</span>
+
+    <span class="answer" tabindex="0" role="button">出借或使用他人名义</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="270"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建士【指示】事由3：</span>
+
+    <span class="answer" tabindex="0" role="button">宅建士业务相关不正或显著不正行为</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="271"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建士【事务禁止】事由1：</span>
+
+    <span class="answer" tabindex="0" role="button">指示处分对象事由</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="272"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">宅建士【事务禁止】事由2：</span>
+
+    <span class="answer" tabindex="0" role="button">不服从指示处分</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="273"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【宅建士】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">登录欠格事由</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="274"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【宅建士】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">不正手段登录</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="275"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【宅建士】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">不正手段拿宅建士证</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="276"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【宅建士】的4：</span>
+
+    <span class="answer" tabindex="0" role="button">事务禁止行为情状特别严重</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="277"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【宅建士】的5：</span>
+
+    <span class="answer" tabindex="0" role="button">违反事务禁止</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="278"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【登录没拿证】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">登录欠格事由</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="279"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【登录没拿证】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">不正手段登录</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="280"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">【登录消除】事由，【登录没拿证】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">进行宅建士行为情状特别严重</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="281"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【3年】和【300万】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">不正手段获得免许</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="282"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【3年】和【300万】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">无免许进行事业</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="283"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【3年】和【300万】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">出借名义</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="284"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【3年】和【300万】的4：</span>
+
+    <span class="answer" tabindex="0" role="button">违反业务停止处分</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="285"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【2年】和【200万】的：</span>
+
+    <span class="answer" tabindex="0" role="button">为了契约隐瞒事实</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="286"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【1年】和【100万】的：</span>
+
+    <span class="answer" tabindex="0" role="button">不正高额报酬</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="287"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【6个月】和【100万】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">没供讬营业保证金就开始事业</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="288"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【6个月】和【100万】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">夸大广告</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="289"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【6个月】和【100万】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">不当履行延迟</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="290"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【6个月】和【100万】的4：</span>
+
+    <span class="answer" tabindex="0" role="button">手付贷付</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="291"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【100万】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">无免许进行表示和广告</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="292"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【100万】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">出借名义给他人做表示和广告</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="293"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【100万】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">违反专任宅建士设置</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="294"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【100万】的4：</span>
+
+    <span class="answer" tabindex="0" role="button">超过限度额报酬</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="295"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">变更没届出或虚假届出</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="296"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">没交付37条</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="297"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">事务所没揭示报酬</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="298"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的4：</span>
+
+    <span class="answer" tabindex="0" role="button">没带从业者证</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="299"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的5：</span>
+
+    <span class="answer" tabindex="0" role="button">没有标识</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="300"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的6：</span>
+
+    <span class="answer" tabindex="0" role="button">违反守秘义务</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="301"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的7：</span>
+
+    <span class="answer" tabindex="0" role="button">没账本或从业者名簿</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="302"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的8：</span>
+
+    <span class="answer" tabindex="0" role="button">没记载或虚假记载</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="303"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的9：</span>
+
+    <span class="answer" tabindex="0" role="button">没有业务报告或虚假业务报告</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="304"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【50万】的10：</span>
+
+    <span class="answer" tabindex="0" role="button">妨碍国土交通大臣和知事检查</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="305"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【10万】的1：</span>
+
+    <span class="answer" tabindex="0" role="button">未返纳</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="306"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【10万】的2：</span>
+
+    <span class="answer" tabindex="0" role="button">未提出</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="307"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">罚【10万】的3：</span>
+
+    <span class="answer" tabindex="0" role="button">35条说明时未提示</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="308"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">住宅瑕疵担保，基准日开始的</span>
+
+    <span class="answer" tabindex="0" role="button">3周内</span>
+
+    <span class="back">（时间）供讬</span>
+
+</li>
+
+
+<li class="item"
+    data-id="309"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">供讬多少年的</span>
+
+    <span class="answer" tabindex="0" role="button">10</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="310"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">多少平米以下二合一</span>
+
+    <span class="answer" tabindex="0" role="button">55</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="311"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">住宅瑕疵担保，保险的话最低多少钱</span>
+
+    <span class="answer" tabindex="0" role="button">2000万</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="312"
+    data-category="宅建业法">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">没届出的话，从什么时候起就不能卖自己的新房了？</span>
+
+    <span class="answer" tabindex="0" role="button">基准日翌日的50天后</span>
+
+    <span class="back"></span>
+
+</li>
+
+</ul>
+<h2 class="category-heading" data-category="权利关系">权利关系</h2>
+<ul class="knowledge-list">
+
+<li class="item"
+    data-id="1001"
+    data-category="权利关系">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">胎儿有什么权利：</span>
+
+    <span class="answer" tabindex="0" role="button">不法行为造成的损害赔偿请求、继承、遗赠</span>
+
+    <span class="back">（3个）</span>
+
+</li>
+
+
+<li class="item"
+    data-id="1002"
+    data-category="权利关系">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">因【未成年】取消，可以和什么样的第三者对抗？</span>
+
+    <span class="answer" tabindex="0" role="button">任意，不管善意恶意</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="1003"
+    data-category="权利关系">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">因【后见】未成年取消，可以和什么样的第三者对抗？</span>
+
+    <span class="answer" tabindex="0" role="button">任意，不管善意恶意</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="1004"
+    data-category="权利关系">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">后见人什么行为需要家庭裁判所许可？</span>
+
+    <span class="answer" tabindex="0" role="button">成年被后见人居住用建物·敷地的卖却、赁贷、赁贷借解除或抵当权设定</span>
+
+    <span class="back"></span>
+
+</li>
+
+</ul>
+<h2 class="category-heading" data-category="法令">法令</h2>
+<ul class="knowledge-list">
+
+<li class="item"
+    data-id="2001"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">第一种低层住居专用地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【低层】住宅...【良好】住居环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2002"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">第二种低层住居专用地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【主】...【低层】住宅...【良好】住居环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2003"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">田园住居地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【农业】利便增进...【调和】低层住宅...【良好】住居环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2004"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">第一种中高层住居专用地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【中高层】住宅...【良好】住居环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2005"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">第二种中高层住居专用地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【主】...【中高层】住宅...【良好】住居环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2006"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">第一种住居地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【住居】环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2007"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">第二种住居地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【主】...【住居】环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2008"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">准住居地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【道路】沿道..地域特性...【业务利便】增进...【调和】...【住居】环境保护</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2009"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">近邻商业地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【近邻】住宅地住民【日用品】供给主内容...商业其他业务利便增进</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2010"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">商业地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【主】...【商业】其他业务利便增进</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2011"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">准工业地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【主】...【环境恶化】.....【工业】利便增进</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2012"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">工业地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【主】...【工业】利便增进</span>
+
+    <span class="back"></span>
+
+</li>
+
+
+<li class="item"
+    data-id="2013"
+    data-category="法令">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">工业专用地域定义：</span>
+
+    <span class="answer" tabindex="0" role="button">【工业】利便增进</span>
+
+    <span class="back"></span>
+
+</li>
+
+</ul>
+<h2 class="category-heading" data-category="税">税</h2>
+<ul class="knowledge-list">
+
+<li class="item"
+    data-id="3001"
+    data-category="税">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">属于国税的有哪些？</span>
+
+    <span class="answer" tabindex="0" role="button">所得税、登录免许税、印纸税</span>
+
+    <span class="back">（3种）</span>
+
+</li>
+
+
+<li class="item"
+    data-id="3002"
+    data-category="税">
+
+    <input class="item-check" type="checkbox">
+
+    <span class="front">属于地方税的有哪些？</span>
+
+    <span class="answer" tabindex="0" role="button">不动产取得税、固定资产税</span>
+
+    <span class="back">（2种）</span>
 
 </li>
 
@@ -6104,48 +5139,115 @@ h2 {
 
 </main>
 
-
-<!-- 答案显示、Firebase、勾选状态 -->
-
-<script
-    type="module"
-    src="app.js"
-></script>
-
+<script type="module" src="app.js"></script>
 
 <script>
-
-/* =========================
-   未チェックのみ筛选
-   ========================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const filter = document.getElementById("uncompleted-only");
+    const categoryChecks = Array.from(
+        document.querySelectorAll(".category-check")
+    );
 
-    const items = document.querySelectorAll(".item");
+    const uncheckedOnly = document.getElementById("uncompleted-only");
+    const items = Array.from(document.querySelectorAll(".item"));
+    const headings = Array.from(
+        document.querySelectorAll(".category-heading")
+    );
 
-    filter.addEventListener("change", function () {
+    function applyFilters() {
+
+        const selectedCategories = categoryChecks
+            .filter(function (checkbox) {
+                return checkbox.checked;
+            })
+            .map(function (checkbox) {
+                return checkbox.value;
+            });
+
+        // 没有选择分类时，视为全部分类
+        const allCategories = selectedCategories.length === 0;
 
         items.forEach(function (item) {
 
+            const category = item.dataset.category;
             const checkbox = item.querySelector(".item-check");
 
-            if (filter.checked && checkbox.checked) {
-                item.style.display = "none";
-            } else {
-                item.style.display = "";
-            }
+            const categoryMatches =
+                allCategories || selectedCategories.includes(category);
 
+            const checkMatches =
+                !uncheckedOnly.checked || !checkbox.checked;
+
+            item.style.display =
+                categoryMatches && checkMatches ? "" : "none";
         });
 
+        // 如果某个分类没有可见题目，隐藏它的标题
+        headings.forEach(function (heading) {
+
+            const category = heading.dataset.category;
+
+            const hasVisibleItems = items.some(function (item) {
+                return item.dataset.category === category &&
+                    item.style.display !== "none";
+            });
+
+            heading.classList.toggle(
+                "filtered-empty",
+                !hasVisibleItems
+            );
+        });
+
+        // 隐藏没有可见题目的列表，避免留下空白
+        document.querySelectorAll(".knowledge-list").forEach(
+            function (list) {
+                const hasVisibleItems = Array.from(list.children).some(
+                    function (item) {
+                        return item.style.display !== "none";
+                    }
+                );
+
+                list.style.display = hasVisibleItems ? "" : "none";
+            }
+        );
+    }
+
+    categoryChecks.forEach(function (checkbox) {
+        checkbox.addEventListener("change", applyFilters);
     });
 
-});
+    uncheckedOnly.addEventListener("change", applyFilters);
 
+    document.getElementById("select-all-categories")
+        .addEventListener("click", function () {
+            categoryChecks.forEach(function (checkbox) {
+                checkbox.checked = true;
+            });
+            applyFilters();
+        });
+
+    document.getElementById("clear-categories")
+        .addEventListener("click", function () {
+            categoryChecks.forEach(function (checkbox) {
+                checkbox.checked = false;
+            });
+            applyFilters();
+        });
+
+    // Firebase 可能稍后才恢复勾选状态。
+    // 监听题目的勾选变化，让筛选立即更新。
+    items.forEach(function (item) {
+        const checkbox = item.querySelector(".item-check");
+        checkbox.addEventListener("change", applyFilters);
+    });
+
+    // Firebase 初始化后可能异步恢复勾选。
+    // 等页面完成加载后再刷新一次筛选。
+    window.addEventListener("load", applyFilters);
+
+    applyFilters();
+});
 </script>
 
-
 </body>
-
 </html>
